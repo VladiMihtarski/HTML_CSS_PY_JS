@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Search Engine - Advanced Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="advance">
+        <a href="file:///C:/Users/user/Desktop/Web/index.html">Home</a>
+        <a href="file:///C:/Users/user/Desktop/Web/image_search.html">Images</a>
+        <a href="file:///C:/Users/user/Desktop/Web/advance_search.html">Advanced Search</a>
+    </header>
+
+    <div class="content">
+        <h1>Advanced Search</h1>
+        <form id="advanced-search-form">
+            <div>
+                <label for="all-words-input">Find pages with:</label>
+                <label>
+                    <input type="text" id="all-words-input">
+                </label>
+            </div>
+            <div>
+                <label for="exact-phrase-input">Find pages with the exact phrase:</label>
+                <label>
+                    <input type="text" id="exact-phrase-input">
+                </label>
+            </div>
+            <div>
+                <label for="any-words-input">Find pages with any of these words:</label>
+                <label>
+                    <input type="text" id="any-words-input">
+                </label>
+            </div>
+            <div>
+                <label for="none-words-input">Find pages with none of these words:</label>
+                <label>
+                    <input type="text" id="none-words-input">
+                </label>
+            </div>
+			
+			<input type="hidden" id="custId" name="custId" value="3487">
+
+            <button type="submit">Advanced Search</button>
+        </form>
+    </div>
+
+    <script src="advance_search.js"></script>
+</body>
+</html>
