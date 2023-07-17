@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .square {
+      fill: none;
+      stroke: black;
+    }
+    .text {
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Въвеждане на височината на пирамидата
+    var height = parseInt(prompt("Въведете височината на пирамидата: "));
+  
+    // Изчисляване на числата от Триъгълника на Паскал
+    var pascalTriangle = [];
+    for (var i = 0; i < height; i++) {
+      var row = [];
+      for (var j = 0; j <= i; j++) {
+        var coefficient = binomialCoefficient(i, j);
+        row.push(coefficient);
+      }
+      pascalTriangle.push(row);
+    }
+  
+    // Изобразяване на пирамидата
+    var svg = d3.select("body")
+      .append("svg")
