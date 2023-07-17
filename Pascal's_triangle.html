@@ -32,3 +32,36 @@
     // Изобразяване на пирамидата
     var svg = d3.select("body")
       .append("svg")
+      .attr("width", height * 50)
+      .attr("height", height * 50);
+  
+    for (var i = 0; i < height; i++) {
+      var xOffset = (height - i - 1) * 25; // Отместване по X координата
+      var yOffset = i * 50; // Отместване по Y координата
+      for (var j = 0; j <= i; j++) {
+        var square = svg.append("rect")
+          .attr("class", "square")
+          .attr("x", xOffset + j * 50)
+          .attr("y", yOffset)
+          .attr("width", 50)
+          .attr("height", 50);
+  
+        var number = pascalTriangle[i][j];
+        svg.append("text")
+          .attr("class", "text")
+          .attr("x", xOffset + j * 50 + 25)
+          .attr("y", yOffset + 25)
+          .text(number);
+      }
+    }
+  
+    function binomialCoefficient(n, k) {
+      if (k === 0 || k === n) {
+        return 1;
+      } else {
+        return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
+      }
+    }
+  </script>
+</body>
+</html>
